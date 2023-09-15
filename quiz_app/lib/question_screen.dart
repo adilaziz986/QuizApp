@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:quiz_app/answer_button.dart';
 
 class QuestionsScreen extends StatefulWidget {
   const QuestionsScreen({super.key});
@@ -10,28 +11,48 @@ class QuestionsScreen extends StatefulWidget {
 class _QuestionScreenState extends State<QuestionsScreen> {
   @override
   Widget build(BuildContext context) {
-    return SizedBox(
-      width: double.infinity,
-      child: Column(
-        mainAxisAlignment: MainAxisAlignment.center,
-        children: [
-          Text("..."),
-          SizedBox(
-            height: 30,
+    return Card(
+      color: Colors.transparent,
+      child: SizedBox(
+        width: double.infinity,
+        child: Padding(
+          padding: const EdgeInsets.all(8.0),
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              const Text(
+                "The question...",
+                style: TextStyle(
+                  color: Colors.white,
+                ),
+              ),
+              const SizedBox(
+                height: 30,
+              ),
+              AnswerButton(
+                answerText: "Answer1",
+                onTap: () {},
+              ),
+              const SizedBox(
+                height: 30,
+              ),
+              AnswerButton(
+                answerText: "Answer2",
+                onTap: () {},
+              ),
+              const SizedBox(
+                height: 30,
+              ),
+              AnswerButton(
+                answerText: "Answer3",
+                onTap: () {},
+              ),
+              const SizedBox(
+                height: 30,
+              ),
+            ],
           ),
-          ElevatedButton(
-            onPressed: () {},
-            child: Text("Answer1"),
-          ),
-          ElevatedButton(
-            onPressed: () {},
-            child: Text("Answer2"),
-          ),
-          ElevatedButton(
-            onPressed: () {},
-            child: Text("Answer3"),
-          ),
-        ],
+        ),
       ),
     );
   }
