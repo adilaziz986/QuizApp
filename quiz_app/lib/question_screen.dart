@@ -1,58 +1,44 @@
 import 'package:flutter/material.dart';
 import 'package:quiz_app/answer_button.dart';
+import 'package:quiz_app/data/questions.dart';
 
 class QuestionsScreen extends StatefulWidget {
   const QuestionsScreen({super.key});
 
   @override
-  State<QuestionsScreen> createState() => _QuestionScreenState();
+  State<QuestionsScreen> createState() => _QuestionsScreenState();
 }
 
-class _QuestionScreenState extends State<QuestionsScreen> {
+class _QuestionsScreenState extends State<QuestionsScreen> {
   @override
   Widget build(BuildContext context) {
-    return Card(
-      color: Colors.transparent,
-      child: SizedBox(
-        width: double.infinity,
-        child: Padding(
-          padding: const EdgeInsets.all(8.0),
-          child: Column(
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: [
-              const Text(
-                "The question...",
-                style: TextStyle(
-                  color: Colors.white,
-                ),
-              ),
-              const SizedBox(
-                height: 30,
-              ),
-              AnswerButton(
-                answerText: "Answer1",
-                onTap: () {},
-              ),
-              const SizedBox(
-                height: 30,
-              ),
-              AnswerButton(
-                answerText: "Answer2",
-                onTap: () {},
-              ),
-              const SizedBox(
-                height: 30,
-              ),
-              AnswerButton(
-                answerText: "Answer3",
-                onTap: () {},
-              ),
-              const SizedBox(
-                height: 30,
-              ),
-            ],
+    final currentQuestion = questions[0];
+
+    return SizedBox(
+      width: double.infinity,
+      child: Column(
+        mainAxisAlignment: MainAxisAlignment.center,
+        children: [
+          const SizedBox(
+            height: 30,
           ),
-        ),
+          AnswerButton(
+            answerText: currentQuestion.answers[0],
+            onTap: () {},
+          ),
+          AnswerButton(
+            answerText: currentQuestion.answers[1],
+            onTap: () {},
+          ),
+          AnswerButton(
+            answerText: currentQuestion.answers[2],
+            onTap: () {},
+          ),
+          AnswerButton(
+            answerText: currentQuestion.answers[3],
+            onTap: () {},
+          ),
+        ],
       ),
     );
   }

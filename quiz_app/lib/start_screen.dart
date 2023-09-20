@@ -3,11 +3,11 @@ import 'package:flutter/material.dart';
 class StartScreen extends StatelessWidget {
   const StartScreen(this.startQuiz, {super.key});
 
-  final Function() startQuiz;
+  final void Function() startQuiz;
 
   @override
   Widget build(BuildContext context) {
-    return Material(
+    return Center(
       child: Scaffold(
         body: Container(
           decoration: const BoxDecoration(
